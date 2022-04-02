@@ -62,13 +62,14 @@ class MyApp extends StatelessWidget {
         builder: (ctx, auth, _) => MaterialApp(
           title: 'My Shop',
           theme: ThemeData(
-              primarySwatch: Colors.purple,
-              accentColor: Colors.deepOrange,
-              fontFamily: 'Lato-Regular.ttf',
-              pageTransitionsTheme: PageTransitionsTheme(builders: {
-                TargetPlatform.android: CustomRoutePageTransitionBuilder(),
-                TargetPlatform.iOS: CustomRoutePageTransitionBuilder(),
-              })),
+            primarySwatch: Colors.purple,
+            accentColor: Colors.deepOrange,
+            fontFamily: 'Lato-Regular.ttf',
+            pageTransitionsTheme: PageTransitionsTheme(builders: {
+              TargetPlatform.android: CustomRoutePageTransitionBuilder(),
+              TargetPlatform.iOS: CustomRoutePageTransitionBuilder(),
+            }),
+          ),
           home: auth.isAuth
               ? ProductsOverviewScreen()
               : FutureBuilder(
